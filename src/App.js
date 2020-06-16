@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { CardList } from './components/card-list/card-list.component';
-import { SearchBox } from './components/search-box/search-box.component';
+import { CardList } from "./components/card-list/card-list.component";
+import { SearchBox } from "./components/search-box/search-box.component";
 
-import './App.css';
+import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
 
-    this.state = { monsters: [], searchField: '' };
+    this.state = { monsters: [], searchField: "" };
   }
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users').then((response) =>
+    fetch("https://jsonplaceholder.typicode.com/users").then((response) =>
       response.json().then((users) => this.setState({ monsters: users }))
     );
   }
@@ -30,6 +30,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1>Monsters!</h1>
         <SearchBox
           placeholder="Search them..."
           handleChange={this.handleChange}
